@@ -6,3 +6,4 @@ export { default as AccountScreen } from './AccountScreen';
 export { default as SettingsScreen } from './SettingsScreen';
 export { default as SearchScreen } from './SearchScreen';
 export { default as ShopScreen } from './ShopScreen';
+export { default as IntroScreen } from '../screens/crud/IntroScreen';
