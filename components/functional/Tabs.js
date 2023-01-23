@@ -7,8 +7,9 @@ import {
   HomeScreen,
   SearchScreen,
   SettingsScreen,
-  IntroScreen,
+  NoteScreen,
   ShopScreen,
+  SignInScreen,
 } from '../../screens';
 import Colors from '../../constant/colors';
 import TabButton from '../ui/TabButton';
@@ -76,7 +77,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Note"
-        component={IntroScreen}
+        component={SignInScreen}
         options={{
           tabBarLabel: 'Note',
           tabBarIcon: ({ color }) => (

@@ -10,3 +10,5 @@
 - AsyncStorage
 - Fontawesome
 - Tailwind Css
+- Custom Bottom Tab Design
+- Custom Button witn SignIn

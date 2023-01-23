@@ -1,6 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { OnBoardScreen, IntroScreen } from './screens';
+import {
+  OnBoardScreen,
+  NoteScreen,
+  SignInScreen,
+  SignUpScreen,
+} from './screens';
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from 'expo-status-bar';
@@ -30,7 +35,7 @@ export default function App() {
       <StatusBar style="light" />
       <NavigationContainer>
         <Stack.Navigator>
-          {!isFirstLaunch && (
+          {isFirstLaunch && (
             <Stack.Screen
               name="onBoard"
               component={OnBoardScreen}
@@ -43,8 +48,18 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="IntroScreen"
-            component={IntroScreen}
+            name="NoteScreen"
+            component={NoteScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SignIn"
+            component={SignInScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SiginUp"
+            component={SignUpScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
