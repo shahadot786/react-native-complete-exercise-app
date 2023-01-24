@@ -7,6 +7,4 @@ export { default as SettingsScreen } from './SettingsScreen';
 export { default as SearchScreen } from './SearchScreen';
 export { default as ShopScreen } from './ShopScreen';
 export { default as NoteScreen } from './crud/NoteScreen';
-
-
-
+export { default as DashboardScreen } from './crud/DashboardScreen';

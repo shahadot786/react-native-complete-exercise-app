@@ -5,16 +5,35 @@ import {
   TextInput,
   ScrollView,
   KeyboardAvoidingView,
+  Alert,
 } from 'react-native';
 import React from 'react';
 import Images from '../../constant/Images';
 import Colors from '../../constant/colors';
 import Button from '../../components/ui/Button';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const SignInScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const onSubmitHandler = () => {
+    if (email && password) {
+      setIsSubmit(true);
+    } else {
+      Alert.alert('Error', 'Empty or Invalid Input', [
+        {
+          text: 'OK',
+          style: 'cancel',
+          onPress: () => console.log('OK Pressed'),
+        },
+      ]);
+    }
+  };
 
   return (
     <ScrollView className="flex-1 bg-zinc-800">
@@ -48,8 +67,18 @@ const SignInScreen = () => {
             />
           </View>
           <View className="mb-8">
-            <Button color={Colors.success}>SIGN IN</Button>
-            <Button color={Colors.warning}>REGISTER</Button>
+            <Button onPress={onSubmitHandler} color={Colors.success}>
+              SIGN IN
+            </Button>
+            <Text className="text-center mt-2 text-white">
+              Register an account!
+            </Text>
+            <Button
+              onPress={() => navigation.navigate('SignUp')}
+              color={Colors.warning}
+            >
+              REGISTER
+            </Button>
           </View>
         </View>
       </KeyboardAvoidingView>

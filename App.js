@@ -5,6 +5,7 @@ import {
   NoteScreen,
   SignInScreen,
   SignUpScreen,
+  DashboardScreen,
 } from './screens';
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -58,8 +59,13 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="SiginUp"
+            name="SignUp"
             component={SignUpScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Dashboard"
+            component={DashboardScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

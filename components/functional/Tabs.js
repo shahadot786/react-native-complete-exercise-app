@@ -77,7 +77,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Note"
-        component={SignInScreen}
+        component={NoteScreen}
         options={{
           tabBarLabel: 'Note',
           tabBarIcon: ({ color }) => (
